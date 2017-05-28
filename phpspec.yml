@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: GoodlerJudge
+        psr4_prefix: GoodlerJudge
+        src_path: app
