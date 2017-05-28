@@ -1,2 +1,2 @@
 # judge
-Online code evaluator.
+Online code evaluator build with laravel framework.
