@@ -1,0 +1,37 @@
+#!/bin/bash
+# This script installs and sets up LXC and a container runing ubuntu that is
+# used for testing user submissions.
+
+. test-engine.cfg
+
+# Install LXC software.
+installLxc() {
+	apt-get install lxc
+}
+
+# Create unprivileged container configuration file.
+createConfig() {
+	mkdir -p $LXC_CFG_LOCATION
+	echo "$LXC_CFG_CONTENT" > $LXC_CFG_FILE
+	grep -q "$LXC_NET_CONTENT" $LXC_NET_FILE || \
+		echo "$LXC_NET_CONTENT" >> $LXC_NET_FILE
+}
+
+# Create unprivileged LXC container with ubuntu.
+createContainer() {
+	sudo -u $SUDO_USER lxc-create -t download -n $CONTAINER_NAME
+}
+
+# Start script execution.
+main() {
+	set -e
+	echo "Installing LXC ..."
+	installLxc
+	echo "Writing to $LXC_CFG_FILE ..."
+	createConfig
+	echo "Creating container $CONTAINER_NAME ..."
+	createContainer
+}
+
+main
+

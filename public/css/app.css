@@ -1,0 +1,25 @@
+/* Latest compiled and minified CSS */
+@import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css");
+/* Optional theme */
+@import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css");
+body {
+  padding-top: 50px; }
+
+.jumbotron {
+  background-image: url("/images/code-wallpaper-4.png");
+  color: #ffffff;
+  background-size: contain;
+  background-repeat: repeat-x;
+  background-color: #020016; }
+
+.top-margin-20 {
+  margin-top: 30px; }
+
+.white-user {
+  color: #ffffff;
+  font-size: large; }
+
+.gly-right {
+  float: right; }
+
+/*# sourceMappingURL=app.css.map */

@@ -1,0 +1,7 @@
+#!/bin/bash
+# This script starts the LXC container used for testing.
+
+. test-engine.cfg
+
+lxc-start -n $CONTAINER_NAME -d
+

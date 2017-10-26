@@ -1,0 +1,7 @@
+#!/bin/bash
+# This script stops the LXC contaner used for testing submissions.
+
+. test-engine.cfg
+
+lxc-stop -n $CONTAINER_NAME -k
+
