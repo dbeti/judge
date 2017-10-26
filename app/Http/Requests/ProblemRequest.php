@@ -1,0 +1,37 @@
+<?php namespace GoodlerJudge\Http\Requests;
+
+use GoodlerJudge\Http\Requests\Request;
+use GoodlerJudge\Problem;
+use Illuminate\Support\Facades\Auth;
+
+
+class ProblemRequest extends Request {
+
+	/**
+	 * Determine if the user is authorized to make this request.
+	 *
+	 * @return bool
+	 */
+	public function authorize()
+	{
+		return true;
+
+	}
+
+	/**
+	 * Get the validation rules that apply to the request.
+	 *
+	 * @return array
+	 */
+	public function rules()
+	{
+		return [
+			'name' => 'required|min:3|max:20',
+			'description' => 'required',
+			'time_limit' => 'required|integer',
+			'memory_limit' => 'required|integer',
+			'tag_list' => 'required'
+		];
+	}
+
+}
